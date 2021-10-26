@@ -8,11 +8,8 @@ def mergeSortTwoLists(list1, list2):
         else:
             sorted.append(list2[j])
             j += 1
-        #k += 1
-    while i < len(list1):
-        sorted.append(list1[i])
-        i += 1
-    while j < len(list2):
-        sorted.append(list2[j])
-        j += 1
+    if i < len(list1):
+        sorted += list1[i:]
+    elif j < len(list2):
+        sorted += list2[j:]
     return sorted
